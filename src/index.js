@@ -1,7 +1,9 @@
-
+import parseTemplateToTokens from "./parseTemplateToTokens";
+import renderTemplate from './renderTemplate.js';
 
 window.mustache = {
     render:function (templateStr,data) {  
-        return 'render返回值'
+        var tokens = parseTemplateToTokens(templateStr);
+        return renderTemplate(tokens,data);
     }
 }
